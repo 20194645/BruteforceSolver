@@ -93,7 +93,7 @@ bool check(int current_node, int next_node)
 
 void solve(int id, int cost, set<int> complete_agv, vector<int> des)
 {
-    if (cost >= tmp)
+    if (cost > tmp)
     {
         return;
     }
@@ -151,8 +151,13 @@ void solve(int id, int cost, set<int> complete_agv, vector<int> des)
     }
 }
 
-int main()
+int main(int argc, char* argv[])
 {
+    if (argc > 1)
+    {
+        tmp = atoi(argv[1]);
+    }
+    cout<<tmp<<endl;
     path.resize(100);
     marked.resize(100);
     readSpacemap();
